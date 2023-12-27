@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 8.875" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="b463271a-4e97-4ed0-85a8-4db2b6d22552" absoluteBounds="6.25, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClasses1DataContext/Dance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4f58c83c-1a56-4963-a3ef-887dbb9350b5" absoluteBounds="6.265, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b789d8e5-15fa-46ea-98df-15167c6bd642" absoluteBounds="0.75, 3.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/DataClasses1DataContext/Dancer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d0a99357-226a-4e9a-8e5c-402b0e7339f7" absoluteBounds="0.765, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d2c7cc35-f5dd-4905-a395-9c9115e4a390" absoluteBounds="9, 3.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses1DataContext/Grade" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73b8aa16-e83d-4a82-8791-18571956d878" absoluteBounds="9.015, 4.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ef7a0fb-9f6e-4ca3-ab32-f85cfc177a22" absoluteBounds="6.25, 6.875, 2, 1.7708968098958326">
+      <DataClassMoniker Name="/DataClasses1DataContext/Judge" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e1a6726-f39c-41fa-a5a0-f379e676429a" absoluteBounds="6.265, 7.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e602296-8903-415b-9578-bc2050a1d84f" absoluteBounds="3.5, 3.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/DataClasses1DataContext/Pair" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e31582ea-01d0-4ac7-9f21-c085b529ccc6" absoluteBounds="3.515, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f124239-e533-4aca-8bd7-ce580aa0ad44" absoluteBounds="6.25, 3.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/DataClasses1DataContext/Performance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d906ad27-b644-4717-b66a-37d4f5b6aeba" absoluteBounds="6.265, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 1.44314697265625); (10 : 1.44314697265625); (10 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Dance/Dance_Grade" />
+      <nodes>
+        <classShapeMoniker Id="b463271a-4e97-4ed0-85a8-4db2b6d22552" />
+        <classShapeMoniker Id="d2c7cc35-f5dd-4905-a395-9c9115e4a390" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.71168708969351); (3.125 : 6.08668708969351); (3.125 : 6.15549967447917); (8.625 : 6.15549967447917); (9 : 5.78049967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Dancer/Dancer_Grade" />
+      <nodes>
+        <classShapeMoniker Id="b789d8e5-15fa-46ea-98df-15167c6bd642" />
+        <classShapeMoniker Id="d2c7cc35-f5dd-4905-a395-9c9115e4a390" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 7.76044840494792); (10.0312525 : 7.76044840494792); (10.0312525 : 5.78049967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Judge/Judge_Grade" />
+      <nodes>
+        <classShapeMoniker Id="5ef7a0fb-9f6e-4ca3-ab32-f85cfc177a22" />
+        <classShapeMoniker Id="d2c7cc35-f5dd-4905-a395-9c9115e4a390" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.75150915249399); (5.875 : 3.37650915249399); (5.875 : 3.25); (7.16666666666667 : 3.25 : JumpStart); (7.33333333333333 : 3.25 : JumpEnd); (8.625 : 3.25); (9 : 3.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/Pair/Pair_Grade" />
+      <nodes>
+        <classShapeMoniker Id="3e602296-8903-415b-9578-bc2050a1d84f" />
+        <classShapeMoniker Id="d2c7cc35-f5dd-4905-a395-9c9115e4a390" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.69959104484676); (3.5 : 4.69959104484676)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Dancer/Dancer_Pair" />
+      <nodes>
+        <classShapeMoniker Id="b789d8e5-15fa-46ea-98df-15167c6bd642" />
+        <classShapeMoniker Id="3e602296-8903-415b-9578-bc2050a1d84f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.23688656727013); (3.5 : 5.23688656727013)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Dancer/Dancer_Pair1" />
+      <nodes>
+        <classShapeMoniker Id="b789d8e5-15fa-46ea-98df-15167c6bd642" />
+        <classShapeMoniker Id="3e602296-8903-415b-9578-bc2050a1d84f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 4.73159912109375); (9 : 4.73159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Performance/Performance_Grade" />
+      <nodes>
+        <classShapeMoniker Id="0f124239-e533-4aca-8bd7-ce580aa0ad44" />
+        <classShapeMoniker Id="d2c7cc35-f5dd-4905-a395-9c9115e4a390" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 2.1362939453125); (7.25 : 3.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Dance/Dance_Performance" />
+      <nodes>
+        <classShapeMoniker Id="b463271a-4e97-4ed0-85a8-4db2b6d22552" />
+        <classShapeMoniker Id="0f124239-e533-4aca-8bd7-ce580aa0ad44" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.76360619734075); (6.25 : 4.76360619734075)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/Pair/Pair_Performance" />
+      <nodes>
+        <classShapeMoniker Id="3e602296-8903-415b-9578-bc2050a1d84f" />
+        <classShapeMoniker Id="0f124239-e533-4aca-8bd7-ce580aa0ad44" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

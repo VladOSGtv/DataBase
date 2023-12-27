@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="КБТ" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\КБТ.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="Конкурс_Бальних_Танців.Properties.Settings" SettingsPropertyName="КБТConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Dance" Member="Dances">
+    <Type Name="Dance">
+      <Column Name="danceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dance_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dance_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Dance_Grade" Member="Grades" ThisKey="danceID" OtherKey="danceID" Type="Grade" />
+      <Association Name="Dance_Performance" Member="Performances" ThisKey="danceID" OtherKey="danceID" Type="Performance" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dancer" Member="Dancers">
+    <Type Name="Dancer">
+      <Column Name="dancerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dancer_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dancer_surname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dancer_age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mentor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dancer_middleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Dancer_Grade" Member="Grades" ThisKey="dancerID" OtherKey="dancerID" Type="Grade" />
+      <Association Name="Dancer_Pair" Member="Pairs" ThisKey="dancerID" OtherKey="dancer1ID" Type="Pair" />
+      <Association Name="Dancer_Pair1" Member="Pairs1" ThisKey="dancerID" OtherKey="dancer2ID" Type="Pair" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Grade" Member="Grades">
+    <Type Name="Grade">
+      <Column Name="gradeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="judgeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="performanceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pairID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dancerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="danceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="gradeAmount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Dance_Grade" Member="Dance" ThisKey="danceID" OtherKey="danceID" Type="Dance" IsForeignKey="true" />
+      <Association Name="Dancer_Grade" Member="Dancer" ThisKey="dancerID" OtherKey="dancerID" Type="Dancer" IsForeignKey="true" />
+      <Association Name="Judge_Grade" Member="Judge" ThisKey="judgeID" OtherKey="judgeID" Type="Judge" IsForeignKey="true" />
+      <Association Name="Pair_Grade" Member="Pair" ThisKey="pairID" OtherKey="pairID" Type="Pair" IsForeignKey="true" />
+      <Association Name="Performance_Grade" Member="Performance" ThisKey="performanceID" OtherKey="performanceID" Type="Performance" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Judges" Member="Judges">
+    <Type Name="Judge">
+      <Column Name="judgeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="judge_surname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="judge_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="judge_middleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="judge_category" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Judge_Grade" Member="Grades" ThisKey="judgeID" OtherKey="judgeID" Type="Grade" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pair" Member="Pairs">
+    <Type Name="Pair">
+      <Column Name="pairID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dancer1ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dancer2ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="arbitrary_program" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="main_program" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="team_name" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="Pair_Grade" Member="Grades" ThisKey="pairID" OtherKey="pairID" Type="Grade" />
+      <Association Name="Pair_Performance" Member="Performances" ThisKey="pairID" OtherKey="pairID" Type="Performance" />
+      <Association Name="Dancer_Pair" Member="Dancer" ThisKey="dancer1ID" OtherKey="dancerID" Type="Dancer" IsForeignKey="true" />
+      <Association Name="Dancer_Pair1" Member="Dancer1" ThisKey="dancer2ID" OtherKey="dancerID" Type="Dancer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Performance" Member="Performances">
+    <Type Name="Performance">
+      <Column Name="performanceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pairID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="danceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="performance_time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="performance_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="grade" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Performance_Grade" Member="Grades" ThisKey="performanceID" OtherKey="performanceID" Type="Grade" />
+      <Association Name="Dance_Performance" Member="Dance" ThisKey="danceID" OtherKey="danceID" Type="Dance" IsForeignKey="true" />
+      <Association Name="Pair_Performance" Member="Pair" ThisKey="pairID" OtherKey="pairID" Type="Pair" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

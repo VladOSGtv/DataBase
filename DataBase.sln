@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab01", "Lab01\Lab01.csproj", "{57109102-D0F6-4D98-B68F-B7FF6F086D25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab02", "Lab02\Lab02.csproj", "{20AA942D-4D05-4A0C-A07F-9F3EE5927172}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab02", "Lab02\Lab02.csproj", "{20AA942D-4D05-4A0C-A07F-9F3EE5927172}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Конкурс Бальних Танців", "..\Конкурс Бальних Танців\Конкурс Бальних Танців\Конкурс Бальних Танців.csproj", "{6CD4D407-35B2-4FC9-AAB6-0F91C7A1FD32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{20AA942D-4D05-4A0C-A07F-9F3EE5927172}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20AA942D-4D05-4A0C-A07F-9F3EE5927172}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20AA942D-4D05-4A0C-A07F-9F3EE5927172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CD4D407-35B2-4FC9-AAB6-0F91C7A1FD32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CD4D407-35B2-4FC9-AAB6-0F91C7A1FD32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CD4D407-35B2-4FC9-AAB6-0F91C7A1FD32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CD4D407-35B2-4FC9-AAB6-0F91C7A1FD32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
